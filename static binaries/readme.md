@@ -1,4 +1,7 @@
-#Static Binaries
-These are pre-compiled static files for use on various systems.
+# Static Binaries
+These are pre-compiled static files for use on various systems.  
+Upload where needed and rename appropriately.  
 
-nc_linux_32 | netcat 0.7.1 32bit for Linux
+|Filename|Description|  
+|:---|:---|  
+|nc_linux_32|netcat 0.7.1 32bit for Linux|
