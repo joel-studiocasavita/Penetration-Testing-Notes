@@ -17,5 +17,5 @@ awk '{for(i=2; i<=NF; i++) {a=a" "$i}; split(a,s,","); for(e in s) { split(s[e],
 Nmap Operating System ID  
 `nmap -O -oG <OUTPUTFILE>`      
 ```
-cat | while read line; do echo $line | awk -F ' ' '{ for (i=1;i<=NF;i++) if ($i == "OS:") { printf "%s %s ", $1,$2; j=i; while ($j!="Seq") {printf $j" "; j++} printf "\n"}}';done  
+cat <NMAPRESULTS> | while read line; do echo $line | awk -F ' ' '{ for (i=1;i<=NF;i++) if ($i == "OS:") { printf "%s %s ", $1,$2; j=i; while ($j!="Seq") {printf $j" "; j++} printf "\n"}}';done  
 ```
