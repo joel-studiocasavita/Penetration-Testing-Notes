@@ -11,6 +11,7 @@
 `put     - upload a file`  
 `mget    - download multiple files`  
 `mput    - upload multiple files`  
+`prompt  - enable/disable interaction (disable if downloading multiple files)`
 
 ## http  
 Using Python3 to run a temporary web server to allow file downloads from the current directory:  
