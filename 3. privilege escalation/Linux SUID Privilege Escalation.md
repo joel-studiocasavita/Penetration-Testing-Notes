@@ -1,5 +1,9 @@
-# Linux SUID Privilege Escalation
+# Linux Privilege Escalation
 
+Check Sudo Access  
+`sudo -l`
+
+## SUID Based Privilge Escalation  
 ### Locating SUIDS
 `find . -perm /4000 2>/dev/null`  
 `find / -user root -perm -4000 -print 2>/dev/null`  
