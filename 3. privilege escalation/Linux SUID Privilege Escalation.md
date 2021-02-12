@@ -43,7 +43,9 @@ less
 less /etc/passwd  
 !/bin/sh
 ```
+**Command reference for privilege escalation using SUIDS and SUDO**  
+https://gtfobins.github.io/
 
-Kernel Exploits  
+## Kernel Exploits  
 https://github.com/lucyoa/kernel-exploits
 
