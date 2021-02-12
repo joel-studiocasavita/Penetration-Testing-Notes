@@ -43,3 +43,6 @@ less /etc/passwd
 !/bin/sh
 ```
 
+Kernel Exploits  
+https://github.com/lucyoa/kernel-exploits
+
