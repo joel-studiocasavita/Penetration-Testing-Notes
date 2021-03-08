@@ -23,3 +23,12 @@
   ```
   root2:KWi2XW05LmkMg:0:0:root:/root:/bin/bash
   ```
+
+
+## Command Line 
+### Linux  
+
+### Windows  
+"Grep" function in Windows  
+`findstr /I "<string>"` 
+
