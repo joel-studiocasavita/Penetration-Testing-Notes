@@ -25,3 +25,7 @@ search the registry for key names and passwords
 
 `reg query HKLM /f password /t REG_SZ /s`   
 `reg query HKCU /f password /t REG_SZ /s`  
+
+## Mirror FTP sites  
+
+`wget -r -nH ftp://anonymous:anonymous@192.168.203.114//`  
