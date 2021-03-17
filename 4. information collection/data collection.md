@@ -28,4 +28,4 @@ search the registry for key names and passwords
 
 ## Mirror FTP sites  
 
-`wget -r -nH ftp://anonymous:anonymous@192.168.203.114//`  
+`wget -r -nH ftp://anonymous:anonymous@ipaddress//`  
