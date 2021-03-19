@@ -32,3 +32,5 @@
 "Grep" function in Windows  
 `findstr /I "<string>"` 
 
+Downloading from Windows Command line  
+`certutil.exe -urlcache -f http://target/remotefile localfile`
