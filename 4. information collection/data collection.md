@@ -23,6 +23,7 @@ search the registry for key names and passwords
 `reg query "HKCU\Software\ORL\WinVNC3\Password" # VNC credentials`  
 `reg query HKEY_LOCAL_MACHINE\SOFTWARE\RealVNC\WinVNC4 /v password`  
 
+`reg query HKLM /f pass /t REG_SZ /s`
 `reg query HKLM /f password /t REG_SZ /s`   
 `reg query HKCU /f password /t REG_SZ /s`  
 
