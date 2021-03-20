@@ -32,6 +32,9 @@
 "Grep" function in Windows  
 `findstr /I "<string>"` 
 
+Query LDAP for users
+`ldapsearch -H ldap://[IP]:[Port] -x -LLL -s sub -b "dc=<dcname>,dc=<dcname>"`
+
 Downloading from Windows Command line  
 `certutil.exe -urlcache -f http://target/remotefile localfile`
 
