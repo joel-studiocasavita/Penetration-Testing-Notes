@@ -30,6 +30,10 @@ Attacker
 stty raw -echo  
 fg  
 ```
+in zsh  
+```
+stty raw -echo; fg <enter><enter>
+```
 
 Victim  
 ```reset 
