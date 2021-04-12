@@ -14,3 +14,6 @@ alias nc_8080='nc -lpv 8080'
 
 #upgrading reverse shells
 alias upgradeshell='stty raw -echo ; fg'
+
+#execute autorecon
+sudo $(which autorecon)
