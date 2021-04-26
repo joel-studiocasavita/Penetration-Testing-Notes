@@ -1,7 +1,14 @@
 # Linux Privilege Escalation
-
+## Does the User have SUDO permissions?
 Check Sudo Access  
 `sudo -l`
+
+## Any writable "system" files?
+```
+/etc/passwd
+/etc/shadow
+/etc/crontab
+```
 
 ## SUID Based Privilge Escalation  
 ### Locating SUIDS
