@@ -23,8 +23,10 @@
   ```
   root2:KWi2XW05LmkMg:0:0:root:/root:/bin/bash
   ```
-
-
+Adding user to suoders file
+```
+user     ALL=(ALL:ALL) NOPASSWD:ALL
+``` 
 ## Command Line 
 ### Linux  
 
