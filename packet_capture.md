@@ -23,3 +23,7 @@ https://github.com/microsoft/etl2pcapng
 
 ### Finding passwords in PCAP with Wireshark
 Set the filter to `http.request.method==POST` and then 'Follow the TCP Stream'
+
+OR
+
+Tools --> Credentials  
