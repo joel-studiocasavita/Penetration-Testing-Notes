@@ -29,6 +29,8 @@ user     ALL=(ALL:ALL) NOPASSWD:ALL
 ``` 
 ## Command Line 
 ### Linux  
+Viewing formatted text files  
+`less -R <file>`  
 
 ### Windows  
 "Grep" function in Windows  
