@@ -12,10 +12,10 @@ sudo apt install virtualenv
 ## starting environment
 
 # for python 3
-virtualenv <path to new environment> -b /path/to/python3/bin
+virtualenv -p /path/to/python3/bin <path to new environment>
 
 # for python 2
-virtualenv <path to new envivronment> -b /path/to/python2/bin
+virtualenv -p /path/to/python2/bin <path to new environment>
 
 source <path to new environment>/bin/activate
 
