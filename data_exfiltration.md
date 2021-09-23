@@ -17,6 +17,9 @@
 Using Python3 to run a temporary web server to allow file downloads from the current directory:  
 `$ sudo python3 -m http.server [port]`  
 
+Using wget 
+`$ wget <url> -o <destinationfile>`
+
 ## netcat
 source sends the file  
 source: `$nc -w 3 <DESTINATION> <PORT> < FILENAME>`  
