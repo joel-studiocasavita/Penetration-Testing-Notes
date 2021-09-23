@@ -10,3 +10,16 @@
 /usr/local/etc/httpd/httpd.conf
 /opt/apache2/apache2.conf
 ```
+
+
+## Possible Webdav password location
+```
+<serverroot>/webdav/passwd.dav
+/etc/apache2/passwd.dav
+```
+
+## Uploading files to webdav
+```
+$ cadaver http://hostname[:port]/path
+put <file>
+```
