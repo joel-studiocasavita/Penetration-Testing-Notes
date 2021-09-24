@@ -1,2 +1,3 @@
 
-[ysoserial.net](https://github.com/pwntester/ysoserial.net)
+[ysoserial.net](https://github.com/pwntester/ysoserial.net) (windows)  
+
