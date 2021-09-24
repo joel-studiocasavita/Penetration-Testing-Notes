@@ -3,6 +3,7 @@
 [penelope shell handler](https://github.com/brightio/penelope)  
 rlwrap  
 docker
+gcc-mingw-w64
 
 ## Configuring python virtual environment
 ```
