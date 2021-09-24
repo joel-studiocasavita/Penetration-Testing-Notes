@@ -9,6 +9,11 @@
 ### Cross compiling
   
 ```
+# install minigw compiler
+# sudo apt install gcc-mingw-w64
+
+# compiling
+
 32 bit
 $ i686-w64-mingw32-gcc input.c ouput32.exe
 
