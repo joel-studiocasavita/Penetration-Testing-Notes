@@ -39,7 +39,10 @@ gobuster
 ```
 $ gobuster dir --url <url> -w <wordlist> -o <outputfile>
 ```
-
+wfuzz
+```
+wfuzz -w <wordlist> --hc 404 <url>/FUZZ
+```
 dirbuster (Java Gui)  
 ```
 $ dirbuster
