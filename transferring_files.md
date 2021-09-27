@@ -20,19 +20,19 @@ mput    - upload multiple files
 prompt  - enable/disable interaction (disable if downloading multiple files)
 ```
 ## http  
-Using Python3 to run a temporary web server to allow file downloads from the current directory:  
+### Using Python3 to run a temporary web server to allow file downloads from the current directory:  
 `$ sudo python3 -m http.server [port]`  
 
-Using wget 
+### Using wget 
 `$ wget <url> -O <destinationfile>`
 
 ## netcat
-source sends the file  
+### source sends the file  
 source: `$nc -w 3 <DESTINATION> <PORT> < FILENAME>`  
 destination: `$nc -l -p <PORT> > <FILENAME>`
 
-destination pulls file
-source: `$nc -l -p <PORT> < <FILENAME>`
+### destination pulls file
+source: `$nc -l -p <PORT> < <FILENAME>`  
 destination: `$nc -w 3 <SOURCE> <PORT> > <FILENAME>`    
 
 ## rdp  
@@ -40,15 +40,15 @@ if RDP is available on the system, connect and copy/paste between the rdp client
 
  
 ## smb/windows file sharing  
-Using smbserver.py  
+### Using smbserver.py  
 smbserver.py is a python script that will create an open share in a folder of choice.  Once running, you can browse and interact through it using regular windows file sharing tools, such as Windows Explorer.  
 `$ sudo smbserver.py <SHARE NAME> <LOCAL FOLDER>`  
 
-Using cifs-utils to mount an smb share  
+### Using cifs-utils to mount an smb share  
 `$ sudo mkdir /mnt/<LOCAL FOLDER>`  
 `$ sudo mount -t cifs -o username=<SHARE USER>,domain=<WINDOWS DOMAIN> //<SHARE IP>/<SHARE NAME> /mnt/<LOCAL FOLDER>`  
 
-Using smbclient cli:  
+### Using smbclient cli:  
 `$ sudo smbclient \\\\<HOSTNAME>\\<SHARE>`  
 
 In the cli:  
@@ -59,7 +59,7 @@ In the cli:
 `help  - help menu`  
 `exit  - exits the cli`  
 
-Copying files from the Windows command line:  
+### Copying files from the Windows command line:  
 using drive letters  
 `net use <DRIVE LETTER>: \\<SMBSHARE>`  
 `copy <DRIVE LETTER\SOURCE> <DRIVE LETTER\DESTINATION>`  
