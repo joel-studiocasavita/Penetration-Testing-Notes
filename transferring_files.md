@@ -26,6 +26,9 @@ prompt  - enable/disable interaction (disable if downloading multiple files)
 ### Using wget 
 `$ wget <url> -O <destinationfile>`
 
+### Using Certutil (Windows)  
+`certutil.exe -urlcache -f http://target/remotefile localfile`
+
 ## netcat
 ### source sends the file  
 source: `$nc -w 3 <DESTINATION> <PORT> < FILENAME>`  
