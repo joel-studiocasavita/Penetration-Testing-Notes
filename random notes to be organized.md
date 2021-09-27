@@ -23,9 +23,6 @@ Viewing formatted text files
 Query LDAP for users
 `ldapsearch -H ldap://[IP]:[Port] -x -LLL -s sub -b "dc=<dcname>,dc=<dcname>"`
 
-Downloading from Windows Command line  
-`certutil.exe -urlcache -f http://target/remotefile localfile`
-
 ### Notes  
 
 - when generating a shell on windows, use windows/shell_reverse_tcp
