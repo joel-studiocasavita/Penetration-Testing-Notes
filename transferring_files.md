@@ -1,18 +1,24 @@
-# Data Exfiltration  
+# Transferring Files  
 
 ## ftp  
-`ftp [FTP SERVER ADDRESS] or ftp`  
-`open    - connect to an ftp server`  
-`user    - enter ftp username`  
-`pass    - enter ftp password`  
-`bi      - binary file transfer mode`  
-`hash    - enable file transfer status`  
-`get     - download a file`  
-`put     - upload a file`  
-`mget    - download multiple files`  
-`mput    - upload multiple files`  
-`prompt  - enable/disable interaction (disable if downloading multiple files)`
-
+### Using Python3 to run a temporary ftp server
+```
+$ sudo python3 -m ftpdlib -p <port> --write --directory <path to ftp home / default current directory>  
+```
+### FTP Commands  
+```
+ftp [FTP SERVER ADDRESS] or ftp`  
+open    - connect to an ftp server  
+user    - enter ftp username  
+pass    - enter ftp password  
+bi      - binary file transfer mode  
+hash    - enable file transfer status  
+get     - download a file  
+put     - upload a file  
+mget    - download multiple files  
+mput    - upload multiple files  
+prompt  - enable/disable interaction (disable if downloading multiple files)
+```
 ## http  
 Using Python3 to run a temporary web server to allow file downloads from the current directory:  
 `$ sudo python3 -m http.server [port]`  
