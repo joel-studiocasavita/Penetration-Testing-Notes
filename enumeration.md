@@ -1,6 +1,6 @@
-# Port Scanning  
+## Port Scanning  
 
-## Nmap
+### Nmap
 
 Simples Full tcp port scan with output file
 `# nmap -A -p- -oA <filename> <target>`
@@ -27,3 +27,25 @@ cat <NMAPRESULTS> | while read line; do echo $line | awk -F ' ' '{ for (i=1;i<=N
 
 Find nmap xml files with online hosts
 ```for i in $(find . -name *.xml); do grep -il "1 host up" $i | cut -d '/' -f 2 >> live.txt; done```
+
+## Website enumeration
+
+dirb  
+```
+$ dirb <url> <wordlist> -o <outputfile>
+``` 
+
+gobuster  
+```
+$ gobuster dir --url <url> -w <wordlist> -o <outputfile>
+```
+
+dirbuster (Java Gui)  
+```
+$ dirbuster
+```  
+
+nmap  
+```
+$ nmap <targetIP> -p <port> --script=http-enum -oN <outputfile>
+```  
