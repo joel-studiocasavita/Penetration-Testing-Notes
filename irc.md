@@ -1,0 +1,37 @@
+## IRC Commands|
+|command|description|
+|-|-|
+|/msg|Sends a private message to the specified nickname. Only the specified Nickname will see this message...for example /msg Ilene Do you have anything to add?|
+|/nick|Changes your nickname online; for example /nick Carlos|
+|/help|Gets help on all IRC commands for the server you are on for example, /help whois|
+|/who|Shows who is on a given channel including nicknames, user name, host and real name of the people, for example /who #HSc391|
+|/whois|Shows the profile.ini information of someone. Use this often to make sure you know who you are talking to, because nicknames are NOT owned so any number of people could use a nickname of a friend; for example, /whois Jean|
+|/part|Lets you leave the channel you specify, but keeps you connected to IRC. Example /part #HSc391|
+|/ignore|If someone is bothering you and you do not want to talk to them, put them on ignore. For example, /ignore George|
+|/me|Allows you to make an action (highlighted statement on channel. For example, /me goes for a swim. This would read on channel as Shelia goes for a swim.|
+|/join #|Lets you join a channel. For example, /join #Hypernews would put you into #Hypernews.|
+|/list|gives a listing of all the channels on a server|
+|/query|Another way to private chat with a specific nickname so nobody else can see what you are saying, for example, /query Debi Who is that person over there?|
+|/notify|This command warns you when a person you have indicated joins IRC. For example, /notify Meredith will put Meredith on your notify list. Every time someone joins the IRC server you are on, with the nick Meredith, you would receive a message telling you that Meredith has joined IRC. It also tells you when they leave IRC.|
+|/leave #channel|to leave a channel|
+|/whowas nickname|tells the last person that used that nickname.|
+|/who #channel|tells who is on that channel without you having to be on it. So if I wanted to know who was on #room861 before entering it I would type /who #room861|
+|/who|tells who is on the whole irc server you are on. If you are on one of the bigger servers like undernet, you might find yourself getting disconnected if you use this command. Basically the names list on the busy servers are sooo long that it will flood you off the server is you try listing it.|
+|/flush|stops the flow of a long listing of channels. If you feel the listing is too long and you might get flooded off, just type /flush quickly and that will stop the process.
+|/notice nickname|text sends a highlighted message to a person you choose. For instance /notice peter hey you how is it going? Would send a message to peter's screen, but would not open a private message window like /msg. (The exception to this rule is if the user has setup their client software to force a private window to open).|
+|/topic #channel text|changes topic on the channel. The topic is found by looking way up to the top of the channel screen, it is much like a title for the channel, and often important information about the channel will be placed there. Often Channel Operators will set the topic up so only other operators can change it.|
+|/mode #channel +o nick|gives channel ops to a person ( you must have ops on the channel to give ops ). So if I was an op on #room861 and wanted to give operators status to Don I would type /mode #room861 +o don|
+|/kick #channel nick|kicks person off channel (you must have ops to kick ) This command should only be used when necessary, but be warned, some inexperienced ops go on powertrips and start kicking people randomly. For you this usually boils down to just leaving the channel and finding one where the ops actually have a life.|
+|/dcc send nick filename|sends a file from your dir to another person on IRC|
+|/dcc get nick|receive a file from another person|
+|/dcc chat nick|starts a chat with a person on IRC|
+|/invite nick|invites a person to an invite only channel|
+|/ctcp nick finger|gives finger info on a person|
+|/ping nick|tests lag between you and another person's server|
+|/ignore nick all|Ignores an annoying person|
+|/ignore nick none|clears your ignore list|ify|This command warns you when a person you have indicated joins IRC. For example, /notify Meredith will put Meredith on your notify list. Every time someone joins the IRC server you are on, with the nick Meredith, you would receive a message telling you that Meredith has joined IRC. It also tells you when they leave IRC.|
+|/exit|to exit IRC|
+|/quit|Exits IRC all together|
+|/bye|to exit IRC|  
+
+*source: http://www.csun.edu/~webteach/mirc/commands.html
