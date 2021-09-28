@@ -1,8 +1,6 @@
 [Unquoted Service Paths](#unquoted-service-paths)  
 [Missing Windows Patches](#missing-windows-patches)  
-[AlwaysElevate](#alwayselevate)
-
-
+[AlwaysInstallElevated](#alwaysinstallelevated)
 
 ## Unquoted Service Paths
 ```
@@ -20,14 +18,8 @@ In order to run SomeExecutable.exe, the system will interpret this path as follo
 If C:\Program.exe is not found, then C:\Program Files\A.exe would be executed. If C:\Program Files\A.exe is not found, then C:\Program Files\A Subfolder\B.exe would be executed and so on.  
 
 *source: https://medium.com/@SumitVerma101/windows-privilege-escalation-part-1-unquoted-service-path-c7a011a8d8ae
- 
- 
-## Missing Windows Patches  
-```
-wmic qfe list
-```
 
-## AlwaysElevate
+## AlwaysInstallElevated
 
 ```
 reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
