@@ -26,3 +26,19 @@ For multiple PIDS, just add additional /PIDs
 #powershell
 PS C:\> expand-archive <archivename>
 ```
+Shutdown and Reboot
+#### Reboot
+```
+shutdown /r
+```
+#### Shutdown
+```
+shutdown /s
+```
+Default time-out period to execute the command is 30 seconds.  A `/t <0-600>` can be added to the command line to shorten or extend the time-out.  
+
+#### Abort Shutdown
+May only be used during time-out period
+```
+shutdown /a
+```
