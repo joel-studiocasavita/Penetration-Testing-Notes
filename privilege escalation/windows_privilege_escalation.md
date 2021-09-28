@@ -1,5 +1,5 @@
-[Unquoted Service Paths](#unquoted-service-paths)
-[Missing Windows Patches](#missing-windows-patches)
+[Unquoted Service Paths](#unquoted-service-paths)  
+[Missing Windows Patches](#missing-windows-patches)  
 
 
 
