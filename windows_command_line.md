@@ -21,7 +21,13 @@ taskkill /PID <pid#>
 ```
 For multiple PIDS, just add additional /PIDs  
 
-### unzip an archive
+## Windows Patches
+#### List Windows Patches  
+```
+wmic qfe list
+```
+## Other
+#### unzip an archive
 ```
 #powershell
 PS C:\> expand-archive <archivename>
