@@ -29,8 +29,9 @@ search the registry for key names and passwords
 
 ## Mirror FTP sites  
 
-`wget -r -nH ftp://anonymous:anonymous@ipaddress//`  
-
+```
+wget -r -nH ftp://anonymous:anonymous@ipaddress//
+```
 ## Download using smbclient
 
 `smbclient '\\server\share' -N -c 'prompt OFF;recurse ON;cd 'path\to\directory\';lcd '~/path/to/download/to/';mget *'`
