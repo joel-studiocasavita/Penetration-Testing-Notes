@@ -30,7 +30,7 @@ search the registry for key names and passwords
 ## Mirror FTP sites  
 
 ```
-wget -r -nH ftp://anonymous:anonymous@ipaddress//
+wget -r -nH ftp://anonymous:anonymous@ipaddress[:port]//
 ```
 ## Download using smbclient
 
