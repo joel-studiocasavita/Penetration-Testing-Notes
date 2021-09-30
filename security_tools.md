@@ -7,6 +7,7 @@ gcc-mingw-w64
 WinPeas 
 LinPeas
 xrdp
+foxyproxy
 
 ```
 sudo apt update
