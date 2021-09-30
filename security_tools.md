@@ -2,13 +2,13 @@
 ## Tools to install
 [penelope shell handler](https://github.com/brightio/penelope)  
 rlwrap  
-docker
+docker  
 gcc-mingw-w64  
 WinPeas 
-LinPeas
-xrdp
-foxyproxy
-[psspy](https://github.com/DominicBreuker/pspy)
+LinPeas  
+xrdp  
+foxyproxy  
+[psspy](https://github.com/DominicBreuker/pspy)  
 
 ```
 sudo apt update
