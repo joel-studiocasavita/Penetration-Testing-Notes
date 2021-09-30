@@ -8,6 +8,7 @@ WinPeas
 LinPeas
 xrdp
 foxyproxy
+[psspy](https://github.com/DominicBreuker/pspy)
 
 ```
 sudo apt update
