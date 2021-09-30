@@ -1,7 +1,25 @@
+[Metasploit Commands](#metasploit-commands)  
 [msfvenom payload shorcuts](#msfvenom-payload-shorcuts)  
-
 [msfvenom output formats](#msfvenom-output-formats)  
 
+## Metasploit Commands
+
+#### Configure multi/handler
+```
+use multi/handler
+set PAYLOAD = <payload> (meterpreter is default)
+set LHOST <listening ip>
+set LPORT <lisenting port>
+
+run -j (runs the listener in the background)
+
+Once a session is established...
+sessions <session number> 
+```
+#### Meterpreter
+`bg` puts the current meterpreter session in the background.  Use sessions to reconnect.
+
+###
 ## msfvenom payload shorcuts
 ### Non-Meterpreter Binaries
 Staged Payloads for Windows
