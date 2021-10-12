@@ -91,7 +91,8 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 configure_prompt() {
-    prompt_symbol=㉿
+    #prompt_symbol=㉿
+    prompt_symbol=@
     [ "$EUID" -eq 0 ] && prompt_symbol=💀
     case "$PROMPT_ALTERNATIVE" in
         twoline)
@@ -106,6 +107,10 @@ configure_prompt() {
             PROMPT=$'${debian_chroot:+($debian_chroot)}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))}%B%F{red}%n@%m%b%F{reset}:%B%F{blue}%~%b%F{reset}%(#.#.$) '
             RPROMPT=
             ;;
+        script)
+        PROMPT=$'${debian_chroot:+($debian_chroot)}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))}%B%F{%(#.red.blue)}%n@%m%b%F{reset}:%B%F{%(#.blue.green)}%~%b%F{reset}%(#.#.$) '
+        RPROMPT="%F{green}%D %*"
+        ;;
     esac
 }
 
@@ -256,15 +261,17 @@ fi
 
 ######CUSTOMIZATIONS######
 
+#Overwrite the left prompt
+PROMPT=$'%F{%(#.blue.green)}┌──${debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%F{%(#.red.blue)}%n$prompt_symbol%B%F{green}%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}]\n└─%B%(#.%F{red}#.%F{blue}$)%b%F{reset} '
 
 # Overwrite the right prompt with the date and time stamp.
-#RPROMPT="%F{green}%D %*"
+RPROMPT="%F{green}[%D %*]"
 
 #WAIT...are we recording?
 if [ "$RECORDING" = "true" ]
     then
     PROMPT=$'${debian_chroot:+($debian_chroot)}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))}%B%F{%(#.red.blue)}⏺️%n@%m%b%F{reset}:%B%F{%(#.blue.green)}%~%b%F{reset}%(#.#.$) '
-    RPROMPT="%F{green}%D %*"
+    RPROMPT="%F{green}[%D %*]"
 fi 
 
 ###Custom Aliases
