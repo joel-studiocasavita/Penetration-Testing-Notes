@@ -248,15 +248,24 @@ if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
 fi
 
-# enable command-not-found if installed
+
+# enable command-not-found if instlalled
 if [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
 fi
 
 ######CUSTOMIZATIONS######
 
+
 # Overwrite the right prompt with the date and time stamp.
-RPROMPT="%F{green}%D %*"
+#RPROMPT="%F{green}%D %*"
+
+#WAIT...are we recording?
+if [ "$RECORDING" = "true" ]
+    then
+    PROMPT=$'${debian_chroot:+($debian_chroot)}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))}%B%F{%(#.red.blue)}⏺️%n@%m%b%F{reset}:%B%F{%(#.blue.green)}%~%b%F{reset}%(#.#.$) '
+    RPROMPT="%F{green}%D %*"
+fi 
 
 ###Custom Aliases
 alias lll='ls -last --color=auto'
@@ -265,10 +274,6 @@ alias refresh='source ~/.zshrc'
 alias webserver='sudo python3 -m http.server'
 alias serveshells='sudo python3 -m http.server --directory /usr/share/webshells/'
 alias servewin='sudo python3 -m http.server --directory /usr/share/windows-binaries/'
-
-# Record Console
-alias record='script ~/$(date +%F%T).log'
-
 
 
 ###Custom Functions#####
@@ -284,3 +289,12 @@ function out_ip(){
     curl http://ifconfig.co
     }
     
+# Record terminal sessions
+function record(){
+    if [ "$RECORDING" != "true" ]
+    then
+        export RECORDING=true
+        script ~/$(date +%F%T).log
+        export RECORDING=false
+    fi        
+    }
