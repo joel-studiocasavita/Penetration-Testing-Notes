@@ -296,6 +296,30 @@ function out_ip(){
     curl http://ifconfig.co
     }
     
+# Create target folders
+function create_folders(){
+    if [ ! -d "~/Targets" ]
+    then
+        mkdir ~/Targets
+    fi
+    printf "Target System Name: "
+    read TARGET
+    mkdir -p ~/Targets/$TARGET/loot
+    mkdir -p ~/Targets/$TARGET/exploits
+    mkdir -p ~/Targets/$TARGET/recon
+    alias target='cd ~/Targets/$TARGET' 
+    }
+
+# Add Host Record
+function add_host(){
+    printf "Hostname: "
+    read hostname
+    printf "IP Address: "
+    read ip
+    sudo bash -c "echo $ip    $hostname >> /etc/hosts"
+    }
+
+    
 # Record terminal sessions
 function record(){
     if [ "$RECORDING" != "true" ]
