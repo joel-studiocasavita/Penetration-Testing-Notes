@@ -23,3 +23,6 @@ RECURSE ON = Wildcards includes subfolders
 mget = download multiple files
 
 ```
+### Enum4Linux
+
+`enumb4linux <ip/host>`  
