@@ -23,6 +23,7 @@ RECURSE ON = Wildcards includes subfolders
 mget = download multiple files
 
 ```
-### Enum4Linux
+### Enum4Linux  
+Enumerates system information from smb port.  
 
 `enumb4linux <ip/host>`  
