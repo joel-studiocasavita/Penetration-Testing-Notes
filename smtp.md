@@ -1,4 +1,4 @@
-## SMTP
+## TCP 25 | SMTP
 
 # Sending email using telnet/nc
 
