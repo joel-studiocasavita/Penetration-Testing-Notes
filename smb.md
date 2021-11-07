@@ -1,4 +1,4 @@
-# SMB  
+# TCP 445  
 
 ## Linux
 
@@ -27,3 +27,13 @@ mget = download multiple files
 Enumerates system information from smb port.  
 
 `enumb4linux <ip/host>`  
+
+### smbmap
+Enumerates smb shares  
+
+```
+# lists all files under share\folder
+smbmap -H <smb IP address>  -u <username> -p <password> -r <share\directory>
+
+#
+```
