@@ -30,25 +30,31 @@ Find nmap xml files with online hosts
 
 ## Website enumeration
 
-dirb  
+### whatweb
+Queries the webserver to identify webapps running on the server. 
+```
+whatweb <url>
+```
+
+### dirb  
 ```
 $ dirb <url> <wordlist> -o <outputfile>
 ``` 
 
-gobuster  
+### gobuster  
 ```
 $ gobuster dir --url <url> -w <wordlist> -o <outputfile>
 ```
-wfuzz
+### wfuzz
 ```
 wfuzz -w <wordlist> --hc 404 <url>/FUZZ
 ```
-dirbuster (Java Gui)  
+### dirbuster (Java Gui)  
 ```
 $ dirbuster
 ```  
 
-nmap  
+### nmap  
 ```
 $ nmap <targetIP> -p <port> --script=http-enum -oN <outputfile>
 ```  
