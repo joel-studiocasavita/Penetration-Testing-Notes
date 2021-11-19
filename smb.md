@@ -8,6 +8,10 @@ nano /etc/smbd/smb.conf
 #under the "[global]" section add:
 client min protocol = NT1
 ```
+To identify smb protocols allowed:
+```
+nmap -p445 --script smb-protocols <host>
+```
 
 To view shares:  
 `$ smbclient -L <HOST>`  
