@@ -19,6 +19,11 @@ To view shares:
 To connect to a share
 `$ smbclient \\\\remotehost\\share -U <user>`
 
+To use a specific SMB protocol:
+```
+smbclient -m smb2
+smbclient -m smb3
+```
 ### smbclient commands
 
 ```
