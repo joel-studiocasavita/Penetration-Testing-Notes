@@ -5,77 +5,58 @@
 
 Set the Network Adapter for the guest OS to `Bridged (Autodetect)`.  
 
-gw 192.168.4.1
-
+```
+sudo apt update && sudo apt install -y hostapd dnsmasq wireless-tools iw wvdial
 
 ```
-sudo apt update && sudo apt install isc-dhcp-server
-
-
+## /etc/hostapd/hosapd.conf                          
+*Change the wireless interface name accordingly
 ```
-# /etc/dhcp/dhcpd.conf                          
-
-subnet 192.168.160.0 netmask 255.255.255.0 {
-    default-lease-time 600;
-    max-lease-time 7200;
-    option domain-name "wifi";
-    option domain-name-servers 192.168.160.2;
-    range 192.168.160.10 192.168.160.250;
-    option subnet-mask 255.255.255.0;
-    option broadcast-address 192.168.160.255;
-    option routers 192.168.160.1;
-}
-
+# cat /etc/hostapd/hostapd.conf 
+interface=wlan0
+driver=nl80211
+ssid=FreeWifi
+channel=1
+# Yes, we support the Karma attack.
+#enable_karma=1
 ```
 
+## /etc/dnsmasq.conf
+*Change the wireless interface name accordingly
 ```
-$ sudo airmon-ng
-
-PHY     Interface       Driver          Chipset
-
-phy0    wlan0           rt2800usb       Ralink Technology, Corp. RT5572
-```
-
-```
-$ sudo airmon-ng start wlan0
-
-Found 2 processes that could cause trouble.
-Kill them using 'airmon-ng check kill' before putting
-the card in monitor mode, they will interfere by changing channels
-and sometimes putting the interface back in managed mode
-
-    PID Name
-    496 NetworkManager
-   2084 wpa_supplicant
-
-PHY     Interface       Driver          Chipset
-
-phy0    wlan0           rt2800usb       Ralink Technology, Corp. RT5572
-                (mac80211 monitor mode vif enabled for [phy0]wlan0 on [phy0]wlan0mon)
-                (mac80211 station mode vif disabled for [phy0]wlan0)
-
-$ sudo airbase-ng -c 11 -e freewifi wlan0mon                           1 ⨯
-11:17:25  Created tap interface at0
-11:17:25  Trying to set MTU on at0 to 1500
-11:17:25  Trying to set MTU on wlan0mon to 1800
-11:17:26  Access Point with BSSID DC:4E:F4:06:DA:53 started.
+cat /etc/dnsmasq.conf      
+log-facility=/var/log/dnsmasq.log
+interface=wlan0
+dhcp-range=10.0.0.10,10.0.0.250,12h
+dhcp-option=3,10.0.0.1
+dhcp-option=6,10.0.0.1
+#no-resolv
+log-queries
 ```
 
+## Interface IP commands
+*Change the wireless interface name accordingly
 ```
-# rename monitoring interface accordingly
-sudo ifconfig at0 192.168.160.1 netmask 255.255.255.0
-sudo ifconfig at0 mtu 1400
-sudo route add -net 192.168.160.0 netmask 255.255.255.0 gw 192.168.160.1
-sudo echo 1 > /proc/sys/net/ipv4/ip_forward  #may need to be root.  Sudo didn't work
-sudo iptables -t nat -A PREROUTING -p udp -j DNAT --to 192.168.160.1
-sudo iptables -P FORWARD ACCEPT
-sudo iptables --append FORWARD --in-interface wlan0mon -j ACCEPT
-sudo iptables --table nat --append POSTROUTING --out-interface eth0 -j MASQUERADE
-sudo iptables -t nat -A PREROUTING -p tcp --destination-port 80 -j REDIRECT --to-port 10000
+sudo ifconfig wlan0 10.0.0.1 netmask 255.255.255.0
+sudo ifconfig wlan0 mtu 1400
+sudo route add -net 10.0.0.0 netmask 255.255.255.0 gw 10.0.0.1
 ```
 
-```
-sudo touch /var/lib/dhcp/dhcpd.leases
-sudo dhcpd -cf /etc/dhcp/dhcpd.conf -pf /var/run/dhcpd.pid at0
+## IPtable Rules
+*Change the interface names accordingly  
+*wlan0 = AP / eth0 = internet
 
+```
+sudo iptables --flush
+sudo echo 1 > /proc/sys/net/ipv4/ip_forward
+sudo iptables -A FORWARD -i wlan0 -o eth0 -j ACCEPT
+sudo iptables -A FORWARD -i eth0 -o wla -m state --state ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+```
+
+## Start the Services
+```
+sudo /etc/init.d/hostapd start
+sudo /etc/init.d/dnsmasq start
+```
 
