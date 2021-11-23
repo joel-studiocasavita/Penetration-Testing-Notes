@@ -72,4 +72,7 @@ echo DNSMASQ_OPTS="-p0" >> /etc/default/dnsmasq
 sudo /etc/init.d/dnsmasq restart
 dnschef -i 10.0.0.1
 ```
-
+## To serve fake DNS records
+```
+dnschef -i <interface> --fakedomains <domain.com> --fakeip <IP>
+```
