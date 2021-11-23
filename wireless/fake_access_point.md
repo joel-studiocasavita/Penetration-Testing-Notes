@@ -65,3 +65,11 @@ sudo /etc/init.d/hostapd start
 sudo /etc/init.d/dnsmasq start
 ```
 
+## To run a separate DNS service from dnsmasq
+
+```
+echo DNSMASQ_OPTS="-p0" >> /etc/default/dnsmasq
+sudo /etc/init.d/dnsmasq restart
+dnschef -i 10.0.0.1
+```
+
