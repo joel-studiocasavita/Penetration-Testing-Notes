@@ -19,11 +19,4 @@ By default, capture file is located in `%USERPROFILE%\Appdata\Local\Temp\NetTrac
 
 The file needs to be converted to PCAP in order to view with WireShark:  
 https://github.com/microsoft/etl2pcapng
-
-
-### Finding passwords in PCAP with Wireshark
-Set the filter to `http.request.method==POST` and then 'Follow the TCP Stream'
-
-OR
-
-Tools --> Credentials  
+     
