@@ -9,7 +9,7 @@ Set the Network Adapter for the guest OS to `Bridged (Autodetect)`.
 sudo apt update && sudo apt install -y hostapd dnsmasq wireless-tools iw wvdial
 
 ```
-## /etc/hostapd/hosapd.conf                          
+## /etc/hostapd/hostapd.conf                          
 *Change the wireless interface name accordingly*
 ```
 # cat /etc/hostapd/hostapd.conf 
