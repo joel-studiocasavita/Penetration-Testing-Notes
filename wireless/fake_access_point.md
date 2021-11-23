@@ -54,6 +54,11 @@ sudo iptables -A FORWARD -i eth0 -o wlan0 -m state --state ESTABLISHED,RELATED -
 sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 ```
 
+## Disable Network Manager
+```
+sudo systemctl stop NetworkManager.service
+```
+
 ## Start the Services
 ```
 sudo /etc/init.d/hostapd start
