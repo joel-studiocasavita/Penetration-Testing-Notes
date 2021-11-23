@@ -22,3 +22,12 @@ Transport Layer Security
             Server Name:
 ```
 3. Right click on the `Server Name` field and select `Apply as a column`.
+
+
+### Simple filters
+Just type these into the display filter field to display only those type of packets.
+
+```
+dns
+http
+```
