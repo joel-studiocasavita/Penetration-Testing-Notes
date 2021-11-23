@@ -65,14 +65,27 @@ sudo /etc/init.d/hostapd start
 sudo /etc/init.d/dnsmasq start
 ```
 
-## To run a separate DNS service from dnsmasq
+## DNS Spoffing with dnsmasq
+```
+# add list of ip and host addresses to a file.  The file should follow the /etc/hosts format
+sudo echo 127.0.0.1 example.com > /etc/spoof.hosts
+
+# Modify /etc/dnsmasq.conf to point to the file
+sudo echo addn-hosts=/etc/spoof.hosts >> /etc/dnsmasq.conf
+
+# restart dnsmasq
+sudo /etc/init.d/dnsmasq restart
+```
+
+## To run dnschef instead of dnsmasq
 
 ```
 echo DNSMASQ_OPTS="-p0" >> /etc/default/dnsmasq
 sudo /etc/init.d/dnsmasq restart
 dnschef -i 10.0.0.1
 ```
-## To serve fake DNS records
+## DNS Spoofing with dnschef
 ```
 dnschef -i <interface> --fakedomains <domain.com> --fakeip <IP>
 ```
+
