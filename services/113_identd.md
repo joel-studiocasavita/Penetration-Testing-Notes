@@ -1,4 +1,4 @@
-## identd
+## TCP 113 identd
 
 Identifies the user of a tcp service.  
 

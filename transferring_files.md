@@ -5,20 +5,6 @@
 ```
 $ sudo python3 -m ftpdlib -p <port> --write --directory <path to ftp home / default current directory>  
 ```
-### FTP Commands  
-```
-ftp [FTP SERVER ADDRESS] or ftp`  
-open    - connect to an ftp server  
-user    - enter ftp username  
-pass    - enter ftp password  
-bi      - binary file transfer mode  
-hash    - enable file transfer status  
-get     - download a file  
-put     - upload a file  
-mget    - download multiple files  
-mput    - upload multiple files  
-prompt  - enable/disable interaction (disable if downloading multiple files)
-```
 ## http  
 ### Using Python3 to run a temporary web server to allow file downloads from the current directory:  
 `$ sudo python3 -m http.server [port]`  
@@ -50,17 +36,6 @@ smbserver.py is a python script that will create an open share in a folder of ch
 ### Using cifs-utils to mount an smb share  
 `$ sudo mkdir /mnt/<LOCAL FOLDER>`  
 `$ sudo mount -t cifs -o username=<SHARE USER>,domain=<WINDOWS DOMAIN> //<SHARE IP>/<SHARE NAME> /mnt/<LOCAL FOLDER>`  
-
-### Using smbclient cli:  
-`$ sudo smbclient \\\\<HOSTNAME>\\<SHARE>`  
-
-In the cli:  
-`cd    - change remote directory`  
-`dir   - list directory`  
-`get   - download file (file will be downloaded to local directory)`  
-`put   - upload file (file will be uploaded to remote directory)`  
-`help  - help menu`  
-`exit  - exits the cli`  
 
 ### Copying files from the Windows command line:  
 using drive letters  

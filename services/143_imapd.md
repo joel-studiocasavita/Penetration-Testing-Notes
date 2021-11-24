@@ -1,4 +1,4 @@
-# imapd  
+# TCP 143 imapd  
 
 ### Connecting to imapd  
 `nc -nv <ip> 143`  
