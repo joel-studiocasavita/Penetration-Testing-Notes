@@ -1,4 +1,4 @@
-# Postgresql  
+## TCP 5432 Postgresql  
 
 ### Connecting to the database
 `psql -h HOST/IP -p PORT -U USER`  
