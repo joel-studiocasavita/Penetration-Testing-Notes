@@ -67,7 +67,7 @@ sudo /etc/init.d/hostapd start
 sudo /etc/init.d/dnsmasq start
 ```
 
-## DNS Spoffing with dnsmasq
+## DNS Spoofing with dnsmasq
 ```
 # add list of ip and host addresses to a file.  The file should follow the /etc/hosts format
 sudo echo 127.0.0.1 example.com > /etc/spoof.hosts
