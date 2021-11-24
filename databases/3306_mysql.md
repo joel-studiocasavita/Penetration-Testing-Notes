@@ -1,4 +1,4 @@
-# mysql
+## TCP 3306 mysql
 
 ### Connecting to Mysql  
 ```mysql -u user --password db_name```
