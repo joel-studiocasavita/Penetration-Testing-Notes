@@ -5,6 +5,8 @@
 
 Set the Network Adapter for the guest OS to `Bridged (Autodetect)`.  
 
+
+## Install hostapd and dnsmasq  
 ```
 sudo apt update && sudo apt install -y hostapd dnsmasq wireless-tools iw wvdial
 
