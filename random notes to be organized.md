@@ -20,9 +20,6 @@ Viewing formatted text files
 "Grep" function in Windows  
 `findstr /I "<string>"` 
 
-Query LDAP for users
-`ldapsearch -H ldap://[IP]:[Port] -x -LLL -s sub -b "dc=<dcname>,dc=<dcname>"`
-
 ### Notes  
 
 - when generating a shell on windows, use windows/shell_reverse_tcp
