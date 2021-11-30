@@ -28,6 +28,17 @@ cat <NMAPRESULTS> | while read line; do echo $line | awk -F ' ' '{ for (i=1;i<=N
 Find nmap xml files with online hosts
 ```for i in $(find . -name *.xml); do grep -il "1 host up" $i | cut -d '/' -f 2 >> live.txt; done```
 
+## DNS Enumeration (passive)
+
+#### Find subdomains  
+```
+subfinder -d <domain>
+```
+#### Resolve DNS (passive)
+```
+nmap -sL -iL <target list> -oG <filename> -vvv
+```
+
 ## Website enumeration
 
 ### whatweb
