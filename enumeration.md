@@ -32,6 +32,7 @@ Find nmap xml files with online hosts
 
 #### Find subdomains  
 ```
+sudo apt install subfinder  
 subfinder -d <domain>
 ```
 #### Resolve DNS (passive)
