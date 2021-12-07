@@ -12,8 +12,20 @@ show version();
 
 # Comment
 --comment
-#or
+or
 /*comment*/
+
+# Enumerating db contents
+# Listing the tables
+SELECT * FROM information_schema.tables
+or
+SELECT TABLE_NAME FROM information_schema.tables
+
+# Listing columns
+SELECT * FROM information_schema_columns WHERE table_name = 'TABLE_NAME'
+or
+SELECT column_name FROM information_schema_columns WHERE table_name = 'TABLE_NAME'
+
 ```
  
 ### Command Execution in Postgresql  >= 9.3
