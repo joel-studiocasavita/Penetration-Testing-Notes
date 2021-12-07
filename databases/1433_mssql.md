@@ -4,4 +4,9 @@
 ```
 # Get the db version information
 SELECT @@VERSION; 
+
+# Comment
+--comment
+#or
+/*comment*/
 ```
