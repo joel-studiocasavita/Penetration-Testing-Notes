@@ -6,9 +6,15 @@
 Default username and database are both `postgres`   
 
 
-### Determine the version  
-`show version();`  
+### PostGres Commands  
+```
+show version();
 
+# Comment
+--comment
+#or
+/*comment*/
+```
  
 ### Command Execution in Postgresql  >= 9.3
 
