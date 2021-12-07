@@ -8,6 +8,4 @@ SELECT version FROM v$instance
 
 # Comment
 --comment
-#or
-/*comment*/
 ```
