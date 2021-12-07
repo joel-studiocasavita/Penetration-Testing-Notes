@@ -3,6 +3,12 @@
 ### Connecting to Mysql  
 ```mysql -u user --password db_name```
 
+### MySQL Commands
+```
+# Get the db version information
+SELECT @@VERSION; 
+```
+
 ### Privilege Escalation
 
 Mysql 4.x & 5.0 (requires valid creds) - [dynamic library for do_system() MySQL UDF-raptor_udf2.c](https://www.exploit-db.com/exploits/1518)
