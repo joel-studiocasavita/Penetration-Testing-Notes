@@ -7,6 +7,13 @@
 ```
 # Get the db version information
 SELECT @@VERSION; 
+
+# Comment (Note the space)
+-- comment 
+#or
+#comment
+#or
+/*comment*/
 ```
 
 ### Privilege Escalation
