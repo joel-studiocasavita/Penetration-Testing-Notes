@@ -1,3 +1,9 @@
+### Changing default Python interpreter to version 3 on Linux
+```
+update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+```
+
+
 ### Basic Python Starter Code
 ```
 #!/bin/python
