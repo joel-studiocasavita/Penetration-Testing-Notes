@@ -13,3 +13,12 @@
 |$a <= $b|	Less than or equal to	|true if $a is less than or equal to $b.|
 |$a >= $b|	Greater than or equal to	|true if $a is greater than or equal to $b.|
 |$a <=> $b|	Spaceship	| An int less than, equal to, or greater than zero when $a is less than, equal to, or greater than $b, respectively.|
+
+### Magic Hashes
+
+```
+php > echo md5('240610708');
+0e462097431906509019562988736854
+php > var_dump('0e462097431906509019562988736854' == '0');
+bool(true)
+```
