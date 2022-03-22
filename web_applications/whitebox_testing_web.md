@@ -2,14 +2,14 @@
 ## Common code vulnerabilities
 
 ### PHP
-**publicly available routes/pages  **
+**publicly available routes/pages**
 
 ```
 grep -rnw <webpath> -e "^.*user_location.*public.*" --color
 ```  
 <br>  
 
-**The Eval() function**
+**The Eval() function**  
 The `eval()` function in php will parse the string supplied to it into PHP code.  Great for RCE  
 
 **PHP Filters**
