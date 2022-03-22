@@ -1,14 +1,16 @@
 
 ### Starting Points
 
-**publicly available routes/pages**
+**PHP**  
+publicly available routes/pages  
 
 ```
 grep -rnw <webpath> -e "^.*user_location.*public.*" --color
 ```  
 <br>  
 
-**java search terms**  
+**java**  
+```
 doGet  
 doPost  
 doPut  
@@ -16,7 +18,6 @@ doDelete
 doCopy  
 doOptions  
 
-```
 grep -rnwi <path> -e doGet -e doPost -e doPut -d doDelete -e doCopy -e doOptions
 ```
 <br>
