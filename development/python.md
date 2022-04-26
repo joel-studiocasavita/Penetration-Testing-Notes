@@ -75,7 +75,7 @@ import csv
 header = ['first','second','third']
 data = ['first thing','second thing','third thing']
 
-while open(file, 'w') as f:
+with open(file, 'w') as f:
     writer = csv.writer(f)
     writer.writerow(header)
     for row in data:
