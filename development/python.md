@@ -35,9 +35,14 @@ for line in lines:
 ### Basic http GET request
 ```
 import requests
+# Disable the self-signed certificate warnings
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 
 url = 'URL'
-r = requests.get(url)
+headers = {"Header_1":"Header_1_value","Header_2":"Header_2_value"}
+r = requests.get(url,header=headers,verify=False)
+# verify=False disables the self-signed certificate verification
 response_code = r.status_code
 headers = r.headers
 response = r.text
@@ -50,8 +55,9 @@ print(response)
 import requests
 
 url = 'URL'
-parameters = {'username':'admin', 'password':'password123'}
-r = requests.post(url,params=parameters)
+headers = {"Header_1":"Header_1_value","Header_2":"Header_2
+data = {'username':'admin', 'password':'password123'}
+r = requests.post(url,params=data,header=headers,verify=False)
 response = r.text
 print(response)
 ```
