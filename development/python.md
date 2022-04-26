@@ -31,7 +31,6 @@ for line in lines:
   print(line)
 ```
 
-### Working with Json (To Do)
 
 ### Basic http GET request
 ```
@@ -88,3 +87,7 @@ with open(file, 'w') as f:
     for row in data:
          writer.writerow(row)      
 ```
+
+### Working with Json (To Do)
+
+### Multi-Threading (To Do)
