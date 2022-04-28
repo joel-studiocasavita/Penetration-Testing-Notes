@@ -72,6 +72,7 @@ r = requests.get(url,header=headers,verify=False)
 response_code = r.status_code
 headers = r.headers
 response = r.text
+json_response = r.json()
 print(response)
 ```
 
@@ -114,6 +115,33 @@ with open(file, 'w') as f:
          writer.writerow(row)      
 ```
 
-### Working with Json (To Do)
+### Working with Json
+
+```
+import json
+
+#Converting a json string to a dict object
+
+# a json string
+data = '{"id":"1","name":"leroy","hobby":"gaming"}'
+
+# use loads for json object
+j = json.loads(data)
+
+print(j["hobby"])
+
+# to convert python object (non-json) to a json string, use dumps
+
+# a python dict object
+data_dict = {
+    "id":1,
+    "name":"leroy",
+    "has_blue_eyes":False
+    }
+
+j = json.dumps(data_dict)
+print(j)
+
+```
 
 ### Multi-Threading (To Do)
