@@ -7,11 +7,11 @@
 ### Windows  
 
 To start the capture  
-
 `netsh trace start capture=yes`
 
 To specify an IP address  
 `netsh trace start capture=yes IPv4.Address=x.x.x.x`
+
 To end the capture  
 `netsh trace stop`
 
