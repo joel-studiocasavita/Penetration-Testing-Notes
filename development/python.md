@@ -62,6 +62,7 @@ for line in lines:
 ```
 import requests
 # Disable the self-signed certificate warnings
+import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
