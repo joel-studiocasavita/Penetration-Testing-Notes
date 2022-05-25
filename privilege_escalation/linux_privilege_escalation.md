@@ -71,6 +71,12 @@ less /etc/passwd
 https://gtfobins.github.io/
 
 
+## Finding World Readable Files
+`find / -perm -o+w `  
+**to limit to a specific file type:**    
+`find / -perm -o+w -type d` #directory  
+`find / -perm -o+w -type f` #file  
+`find / -perm -o+w -type l` #link  
 
 ## Processes running as root
 ```
