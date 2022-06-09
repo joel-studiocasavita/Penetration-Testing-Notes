@@ -40,11 +40,14 @@ update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 def function_1(s): #function
     print(s)
     return  
-
-if __name__=="__main__":
+    
+def main():
     words = "Hello world!"
     function_1(words)
     exit()
+
+if __name__=="__main__":
+    main()
 ```
 
 
