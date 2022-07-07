@@ -9,6 +9,16 @@ $ sudo python3 -m ftpdlib -p <port> --write --directory <path to ftp home / defa
 ### Using Python3 to run a temporary web server to allow file downloads from the current directory:  
 `$ sudo python3 -m http.server [port]`  
 
+## http  
+### Using Python3 to run a temporary web server to allow file uploads:
+```
+$ python3 -m pip install uploadserver
+$ sudo python3 -m uploadserver [port] #sudo not necessary if using ports > 1024
+
+On remote machine:  
+$ curl -X POST <url>/upload -F 'files=@<file1>' 'files=@<file2>'
+``` 
+
 ### Using wget 
 `$ wget <url> -O <destinationfile>`
 
