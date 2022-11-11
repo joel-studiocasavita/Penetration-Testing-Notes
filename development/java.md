@@ -8,3 +8,7 @@ echo "Main-Class: test" > META-INF/MANIFEST.MF // is required
 jar cmf META-INF/MANIFEST.MF <jar file> <class file> 
 ```
 
+## executing java jar files
+```
+java -jar <jar file>
+```
