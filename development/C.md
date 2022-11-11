@@ -1,6 +1,4 @@
-# Compiling Code  
-
-## C  
+# C  
 ### Static 32bit  
 `gcc -m32 --static -o <OUTPUT> <INPUT>`  
 ### Dynamic 32bit  
