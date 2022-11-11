@@ -13,7 +13,7 @@ The following terms are useful for looking up:
   ObjectInputStream.readUnshared 
   Serializable 
   
-## Webserver Functions
+## Web Servlet Methods
 doGET  
 doPost  
 doPut  
