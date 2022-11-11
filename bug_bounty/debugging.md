@@ -62,6 +62,8 @@ Reset: \u001b[0m
 #database
 /var/log/mysql.log
 /var/log/mysql.err
+/var/log/mysql/mysql.log
+/var/log/mysql/mysql.err
 
 #any application specific logs
 ```
