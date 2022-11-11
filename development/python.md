@@ -97,7 +97,30 @@ r = requests.post(url,params=data,header=headers,verify=False)
 response = r.text
 print(response)
 ```
+### Session Based http request
+```
+import requests
+# Disable the self-signed certificate warnings
+import urllib3
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
+s = requests.Session()
+
+url = 'URL'
+proxies = {'http':'http://127.0.0.1:8080','https':https://127.0.0.1:8080'}
+
+headers = {}
+headers["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/12.246"
+headers["Content-Type"] = "application/x-www-form-urlencoded"
+
+r = s.get(url,header=headers,proxies=proxies,verify=False)
+# verify=False disables the self-signed certificate verification
+response_code = r.status_code
+headers = r.headers
+response = r.text
+json_response = r.json()
+print(response)
+```
 
 ### Downloading a file
 ```
