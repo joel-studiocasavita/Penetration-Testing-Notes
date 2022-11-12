@@ -22,3 +22,22 @@ php > echo md5('240610708');
 php > var_dump('0e462097431906509019562988736854' == '0');
 bool(true)
 ```
+### Abused methods
+```
+exec_shell
+exec
+system
+doll
+create_function
+require
+move_uploaded_file
+unserialize
+serialize
+eval
+popen
+<backtick>
+pcntl_exec
+preg_replace (with /e modifer)
+include
+include_once
+```
