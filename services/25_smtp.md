@@ -41,3 +41,10 @@ try:
 except SMTPException:
    print("Error: unable to send email")
 ```
+
+### python smtpd server
+
+```
+sudo python3 -m smtpd -n 0.0.0.0:25
+# adding '-c DebuggingServer' will cause the smtpd server to discard messages as it receives them.
+```
