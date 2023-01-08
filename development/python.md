@@ -175,5 +175,35 @@ j = json.dumps(data_dict)
 print(j)
 
 ```
+### Managing a subprocess
+
+```
+import psutil # for managing the pid
+import subprocess # for executing the subprocesses
+import time
+
+def startWebServer(port):
+    print("[+] starting webserver")
+    proc = subprocess.Popen('python3 -m http.server %s' % port, shell=True)
+    return proc
+
+def stopWebServer(pid):
+    print("[-] stopping webserver")
+    parent = psutil.Process(pid) # identify the parent pid process
+    for proc in parent.children(recursive=True): # kill any children processes
+        proc.kill()
+    parent.kill() # kill any parent processes 
+    return
+
+if __name__ == "__main__":
+    port = '9000' # port number for webserver
+    proc = startWebServer(port) # start the webserver and get the parent pid
+    # proc.wait() # This will pause the main program until the subprocess completes. 
+    time.sleep(10) # wait 10 seconds
+    stopWebServer(proc.pid) # stop the webserver using the process pid
+    
+    exit()
+```
+
 
 ### Multi-Threading (To Do)
