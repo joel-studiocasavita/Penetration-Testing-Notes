@@ -1,4 +1,4 @@
-## Configuring python virtual environment
+### Configuring python virtual environment
 ```
 # install virtual environment
 sudo apt install virtualenv
@@ -17,7 +17,7 @@ source <path to new environment>/bin/activate
 deactivate
 ```
 
-## Installing Pip for Python 2
+### Installing Pip for Python 2
 ```
 sudo apt update
 curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
@@ -203,6 +203,44 @@ if __name__ == "__main__":
     stopWebServer(proc.pid) # stop the webserver using the process pid
     
     exit()
+```
+
+### Implementing ANSI Color Codes for Text
+```
+
+
+def console(text,type,tabs = 0):
+    
+    # declared color variables
+    tab = "    " # 4 spaces
+    step = "\033[1m[+]\033[22m "
+    backstep = "\033[1m[-]\033[22m "
+    success = "\033[32;1m[\u0394]\033[22m "
+    error = "\033[31;1m[!]\033[22m "
+    reset = "\033[0m"
+
+    if type == "success":
+        text = success+text
+    if type == "error":
+        text = error+text
+    if type == "step":
+        text = step+text
+    if type == "back_step":
+        text = backstep+text
+    else:
+        text = text
+    if not tabs == 0:
+        text = (tab*tabs) + text
+    
+    print(text+reset)
+    return
+
+if __name__ == "__main__":
+    console("Major step, like starting a process.","step")
+    console("Minor step, like validating something.","step",1)
+    console("An error message","error",1)
+    console("backing out, like shutting down a service","back_step",1)
+    console("Success!!! - like capturing a flag.","success")
 ```
 
 
